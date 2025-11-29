@@ -1,8 +1,9 @@
 import React from "react";
 
-const Bloglist = () => {
+const Bloglist = ({ blogs, title }) => {
   return (
     <div className="blog-list">
+      <h2 className="text-2xl font-medium mb-4">{title}</h2>
       {blogs.map((blog) => (
         <div
           className="blog-preview shadow shadow-pink-300 mb-3 p-2 rounded-lg"
