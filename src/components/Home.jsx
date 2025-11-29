@@ -27,16 +27,6 @@ const Home = () => {
       <h2 className="text-2xl font-medium pb-5 uppercase">
         Here are some blogs
       </h2>
-      {blogs.map((blog) => (
-        <div
-          className="blog-preview shadow shadow-pink-300 mb-3 p-2 rounded-lg"
-          key={blog.id}
-        >
-          <h2 className="text-2xl font-medium text-pink-500">{blog.title}</h2>
-          <p className="text-lg font-medium">Author: {blog.author}</p>
-          <p className="border-t border-t-pink-400">{blog.body}</p>
-        </div>
-      ))}
     </div>
   );
 };
