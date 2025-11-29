@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Bloglist from "./Bloglist";
 
 const Home = () => {
@@ -23,13 +23,25 @@ const Home = () => {
     },
   ]);
 
+  const [name, setName] = useState("Anik");
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlogs(newBlogs);
   };
+
+  useEffect(() => {
+    console.log("use effect ran");
+  }, [name]);
+
   return (
     <div className="home p-10">
       <Bloglist blogs={blogs} title="All blogs" handleDelete={handleDelete} />
+      <button
+        onClick={() => setName("Muntaha")}
+        className="bg-purple-400 px-2 py-0.5 rounded-md font-medium mt-2 cursor-pointer hover:bg-purple-500"
+      >
+        Change Name
+      </button>
     </div>
   );
 };
